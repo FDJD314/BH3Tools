@@ -1,0 +1,29 @@
+#使用#号可以注释整行
+#脚本支持如下指令：
+#Sleep	延时一段时间，单位毫秒
+#Press	点击一个按键，按键名需大写
+#Down	按住一个按键
+#Up	松开一个按住的按键
+#脚本由StartTask、MainTask、EndTask
+#三部分组成StartTask下的指令只在开头
+#执行一次，MainTask下的指令会循环执
+#行直到关卡结束，EndTask下的指令会在
+#MainTask结束后执行一次
+#每行指令都必须以tab开头
+StartTask:
+	Sleep(3000)
+	Press(1)
+	Sleep(150)
+	Press(2)
+	Sleep(150)
+	Down(U)
+	Sleep(500)
+	Up(U)
+	Sleep(150)
+MainTask:
+	Press(I)
+	Sleep(500)
+	Press(J)
+	Sleep(500)
+#EndTask:
+#	Up(J)

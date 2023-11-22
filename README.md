@@ -1,37 +1,13 @@
 # BH3Tools
 
 #### 介绍
-崩坏三刷乐土工具
-
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+崩坏三刷乐土工具,程序会按照config.txt中的配置重复刷乐土的第一层，直到人物经验值满。
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  使用程序前需要先手动使用需要刷的角色打一次，使选择人物时的默认角色是你需要刷的角色
+2.  推荐助战使用观星和月蚀以加快速度
+3.  config.txt 需与 BH3Tool.exe 在同一目录下，apps文件夹中提供一个示例
+4.  BH3Tool.exe 需以管理员身份运行
+5.  程序运行的任何时侯都可以按空格键退出
+6.  辅助程序 keyBoardHook.exe 可以生成一份键盘监听记录帮助你编写 config 文件

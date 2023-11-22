@@ -1,3 +1,4 @@
 build/
-apps/
+apps/*
 .vscode/
+!apps/config.txt
