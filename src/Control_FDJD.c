@@ -236,7 +236,7 @@ int main(void)
     {
         Sleep(1);
         if(TaskSignal==SIGNAL_STOP) break;
-        if(CurrentTask!=NULL && TL_S==NULL && TL_M==NULL && TL_E==NULL){TaskAssigned(CurrentTask);CurrentTask = NULL;}
+        if(CurrentTask!=NULL && TL_S==NULL && TL_M==NULL && TL_E==NULL){TaskAssigned(CurrentTask);CurrentTask = NULL;}//printf("OneLoop\n");}
         if(TaskSignal==SIGNAL_NULL && TL_S!=NULL){StartTaskPro(TL_S);TL_S=NULL;}
         if(TaskSignal==SIGNAL_NULL && TL_S==NULL && TL_M!=NULL){MainTaskPro(TL_M);TL_M=NULL;}
         if(TL_S==NULL && TL_M==NULL && TL_E!=NULL && TaskSignal==SIGNAL_REFLASH){EndTaskPro(TL_E);TL_E=NULL;}

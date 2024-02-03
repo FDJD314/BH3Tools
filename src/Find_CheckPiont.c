@@ -74,18 +74,11 @@ int CheckPoint(PointList *pl)
 int main(void)
 {
     PointList pp;
-    // PointList PL[12][4];
-
-    // PL[7][0].x=459; PL[7][0].y=995; PL[7][0].c=0X00748AFF;PL[7][0].checkmethod=METHOD_IS;PL[7][0].next=&(PL[7][1]);
-    // PL[7][1].x=1840;PL[7][1].y=996; PL[7][1].c=0X004BE1FF;PL[7][1].checkmethod=METHOD_IS;PL[7][1].next=NULL;
-
-    // PL[8][0].x=841; PL[8][0].y=755; PL[8][0].c=0X00748AFF;PL[8][0].checkmethod=METHOD_IS;PL[8][0].next=&(PL[8][1]);
-    // PL[8][1].x=1066;PL[8][1].y=759; PL[8][1].c=0X004BE1FF;PL[8][1].checkmethod=METHOD_IS;PL[8][1].next=NULL;
-
-    // PL[10][0].x=841;PL[10][0].y=755; PL[10][0].c=0X00748AFF;PL[10][0].checkmethod=METHOD_NOT;PL[10][0].next=&(PL[10][1]);
-    // PL[10][1].x=1066; PL[10][1].y=759; PL[10][1].c=0X004BE1FF;PL[10][1].checkmethod=METHOD_NOT;PL[10][1].next=&(PL[10][2]);
-    // PL[10][2].x=1082; PL[10][2].y=383; PL[10][2].c=0X00FFFFFF;PL[10][2].checkmethod=METHOD_NOT;PL[10][2].next=&(PL[10][3]);
-    // PL[10][3].x=1020;PL[10][3].y=393; PL[10][3].c=0X00FFFFFF;PL[10][3].checkmethod=METHOD_NOT;PL[10][3].next=NULL;
+    PointList PL[12][4];
+    
+    PL[11][0].x=1010; PL[11][0].y=232;PL[11][0].c=0X00FFFFFF;PL[11][0].checkmethod=METHOD_IS;PL[11][0].next=&(PL[11][1]);
+    PL[11][1].x=948;  PL[11][1].y=225;  PL[11][1].c=0X00FFFFFF;PL[11][1].checkmethod=METHOD_IS;PL[11][1].next=&(PL[11][2]);
+    PL[11][2].x=874;  PL[11][2].y=227;  PL[11][2].c=0X00FFFFFF;PL[11][2].checkmethod=METHOD_IS;PL[11][2].next=NULL;
    
     hd = GetDC(NULL);
     KeySignal = 0;
@@ -102,16 +95,16 @@ int main(void)
             pp = FindPiont();
             printf("%d,%d:%6x\n",pp.x,pp.y,pp.c);
 
-            // if(CheckPoint(&PL[10][0]))
-            // {
-            //     printf("OK\n");
-            // }
-            // else
-            // {
-            //     printf("FAILD\n");
-            // }
+            if(CheckPoint(&PL[11][0]))
+            {
+                printf("OK\n");
+            }
+            else
+            {
+                printf("FAILD\n");
+            }
 
-            // printf("\a");
+            printf("\a");
         }
 
     }

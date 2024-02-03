@@ -37,7 +37,8 @@ void Task_3_0(void){KeyDown('W');}
 void Task_3_1(void){KeyPress(0X1B);}
 void Task_4_0(void){MouseClick(1802, 973);MySleep(50);}
 void Task_5_0(void){KeyPress('8');MySleep(200);KeyPress('I');MySleep(200);}
-void Task_6_0(void){KeyUp('W');MySleep(100);KeyPress('R');}
+void Task_6_0(void){MySleep(100);KeyPress('R');}
+void Task_6_1(void){KeyUp('W');}
 void Task_7_0(void){KeyPress('J');}
 void Task_8_0(void){KeyPress('U');MySleep(1000);}
 void Task_8_1(void){MouseClick(954, 70);MySleep(500);}
@@ -154,18 +155,18 @@ State* StateLoopGenerate(void)
     PL[2][1].x=1544;PL[2][1].y=1004;PL[2][1].c=0X004BE1FF;PL[2][1].checkmethod=METHOD_IS;PL[2][1].next=NULL;
     TL[2][0].type=TT_STATE_START;TL[2][0].content=Task_2_0;TL[2][0].next=NULL;
     // 战斗场景1
-    PL[3][0].x=595; PL[3][0].y=1014;PL[3][0].c=0X00FFD200;PL[3][0].checkmethod=METHOD_IS;PL[3][0].next=&(PL[3][1]);
-    PL[3][1].x=53;  PL[3][1].y=23;  PL[3][1].c=0X004CDFFE;PL[3][1].checkmethod=METHOD_IS;PL[3][1].next=&(PL[3][2]);
-    PL[3][2].x=456; PL[3][2].y=387; PL[3][2].c=0X004BE1FF;PL[3][2].checkmethod=METHOD_NOT;PL[3][2].next=&(PL[3][3]);
-    PL[3][3].x=272; PL[3][3].y=170;  PL[3][3].c=0X00FFFFFF;PL[3][3].checkmethod=METHOD_NOT;PL[3][3].next=NULL;
-    TL[3][0].type=TT_STATE_START;TL[3][0].content=Task_3_0;TL[3][0].next=NULL;
+    PL[3][0].x=180; PL[3][0].y=171;PL[3][0].c=0X00FFFFFF;PL[3][0].checkmethod=METHOD_IS;PL[3][0].next=&(PL[3][1]);
+    PL[3][1].x=1788;  PL[3][1].y=42;  PL[3][1].c=0X00e6d4cd;PL[3][1].checkmethod=METHOD_IS;PL[3][1].next=&(PL[3][2]);
+    PL[3][2].x=222; PL[3][2].y=170; PL[3][2].c=0X00FFFFFF;PL[3][2].checkmethod=METHOD_NOT;PL[3][2].next=NULL;
+    TL[3][0].type=TT_STATE_START;TL[3][0].content=Task_3_0;TL[3][0].next=&(TL[3][1]);
+    TL[3][1].type=TT_MAIN;TL[3][1].content=Task_6_0;TL[3][1].next=&(TL[3][2]);
+    TL[3][2].type=TT_STATE_END;TL[3][2].content=Task_6_1;TL[3][2].next=NULL;
     // 战斗场景2
-    PL[9][0].x=595; PL[9][0].y=1014;PL[9][0].c=0X00FFD200;PL[9][0].checkmethod=METHOD_IS;PL[9][0].next=&(PL[9][1]);
-    // PL[9][1].x=53;  PL[9][1].y=23;  PL[9][1].c=0X004CDFFE;PL[9][1].checkmethod=METHOD_IS;PL[9][1].next=&(PL[9][2]);
-    PL[9][1].x=920;  PL[9][1].y=295;  PL[9][1].c=0X00FFFFFF;PL[9][1].checkmethod=METHOD_NOT;PL[9][1].next=&(PL[9][2]);
-    PL[9][2].x=83;  PL[9][2].y=57;  PL[9][2].c=0X00313131;PL[9][2].checkmethod=METHOD_IS;PL[9][2].next=&(PL[9][3]);
-    PL[9][3].x=272; PL[9][3].y=170; PL[9][3].c=0X00FFFFFF;PL[9][3].checkmethod=METHOD_IS;PL[9][3].next=NULL;
-    TL[3][1].type=TT_STATE_START;TL[3][1].content=Task_3_1;TL[3][1].next=NULL;
+    PL[9][0].x=222; PL[9][0].y=181;PL[9][0].c=0X00FFFFFF;PL[9][0].checkmethod=METHOD_IS;PL[9][0].next=&(PL[9][1]);
+    PL[9][1].x=190;  PL[9][1].y=160;  PL[9][1].c=0X00FFFFFF;PL[9][1].checkmethod=METHOD_IS;PL[9][1].next=&(PL[9][2]);
+    PL[9][2].x=1010; PL[9][2].y=232;PL[9][2].c=0X00FFFFFF;PL[9][2].checkmethod=METHOD_NOT;PL[9][2].next=&(PL[9][3]);
+    PL[9][3].x=948;  PL[9][3].y=225;  PL[9][3].c=0X00FFFFFF;PL[9][3].checkmethod=METHOD_NOT;PL[9][3].next=NULL;
+    TL[9][0].type=TT_STATE_START;TL[9][0].content=Task_3_1;TL[9][0].next=NULL;
     TL_User_0.type=TT_STATE_START;TL_User_0.content=Task_User_0;TL_User_0.next=&TL_User_1;
     TL_User_1.type=TT_MAIN;TL_User_1.content=Task_User_1;TL_User_1.next=&TL_User_2;
     TL_User_2.type=TT_STATE_END;TL_User_2.content=Task_User_2;TL_User_2.next=NULL;
@@ -197,10 +198,10 @@ State* StateLoopGenerate(void)
     PL[10][3].x=1797;PL[10][3].y=467; PL[10][3].c=0X00FFFFFF;PL[10][3].checkmethod=METHOD_NOT;PL[10][3].next=NULL;
     TL[8][1].type=TT_MAIN;TL[8][1].content=Task_8_1;TL[8][1].next=NULL;
     // 已保存
-    PL[11][0].x=833; PL[11][0].y=297;PL[11][0].c=0X00FFFFFF;PL[11][0].checkmethod=METHOD_IS;PL[11][0].next=&(PL[11][1]);
-    PL[11][1].x=920;  PL[11][1].y=295;  PL[11][1].c=0X00FFFFFF;PL[11][1].checkmethod=METHOD_IS;PL[11][1].next=&(PL[11][2]);
-    PL[11][2].x=992;  PL[11][2].y=304;  PL[11][2].c=0X00FFFFFF;PL[11][2].checkmethod=METHOD_IS;PL[11][2].next=NULL;
-    TL[3][1].type=TT_STATE_START;TL[3][1].content=Task_3_1;TL[3][1].next=NULL;
+    PL[11][0].x=1010; PL[11][0].y=232;PL[11][0].c=0X00FFFFFF;PL[11][0].checkmethod=METHOD_IS;PL[11][0].next=&(PL[11][1]);
+    PL[11][1].x=948;  PL[11][1].y=225;  PL[11][1].c=0X00FFFFFF;PL[11][1].checkmethod=METHOD_IS;PL[11][1].next=&(PL[11][2]);
+    PL[11][2].x=874;  PL[11][2].y=227;  PL[11][2].c=0X00FFFFFF;PL[11][2].checkmethod=METHOD_IS;PL[11][2].next=NULL;
+    TL[9][0].type=TT_STATE_START;TL[9][0].content=Task_3_1;TL[9][0].next=NULL;
 
 
     SL[0].last=&SL[13];SL[0].pl=&PL[0][0];SL[0].task=&TL[0][0];SL[0].next=&SL[1];// 大厅界面
@@ -209,12 +210,12 @@ State* StateLoopGenerate(void)
     SL[3].last=&SL[2];SL[3].pl=&PL[3][0];SL[3].task=NULL;SL[3].next=&SL[4];// 战斗场景1
     SL[4].last=&SL[3];SL[4].pl=&PL[4][0];SL[4].task=&TL[4][0];SL[4].next=&SL[5];// 人物对话
     SL[5].last=&SL[4];SL[5].pl=&PL[5][0];SL[5].task=&TL[5][0];SL[5].next=&SL[6];// 选择刻印
-    SL[6].last=&SL[5];SL[6].pl=&PL[3][0];SL[6].task=&TL[3][0];SL[6].next=&SL[7];// 战斗场景1
-    SL[7].last=&SL[6];SL[7].pl=&PL[6][0];SL[7].task=&TL[6][0];SL[7].next=&SL[8];// 确认锚点
-    SL[8].last=&SL[7];SL[8].pl=&PL[9][0];SL[8].task=&TL_User_0;SL[8].next=&SL[11];// 战斗场景2
-    // SL[9].last=&SL[8];SL[9].pl=&PL[4][0];SL[9].task=&TL[4][0];SL[9].next=&SL[10];// 人物对话
-    // SL[10].last=&SL[9];SL[10].pl=&PL[5][0];SL[10].task=&TL[5][0];SL[10].next=&SL[11];// 选择刻印
-    SL[11].last=&SL[8];SL[11].pl=&PL[11][0];SL[11].task=&TL[3][1];SL[11].next=&SL[12];// 战斗场景2
+    SL[6].last=&SL[5];SL[6].pl=&PL[3][0];SL[6].task=&TL[3][0];SL[6].next=&SL[8];// 战斗场景1
+    // SL[7].last=&SL[6];SL[7].pl=&PL[6][0];SL[7].task=&TL[6][0];SL[7].next=&SL[8];// 确认锚点
+    SL[8].last=&SL[6];SL[8].pl=&PL[9][0];SL[8].task=&TL_User_0;SL[8].next=&SL[9];// 战斗场景2
+    SL[9].last=&SL[8];SL[9].pl=&PL[4][0];SL[9].task=&TL[4][0];SL[9].next=&SL[10];// 人物对话
+    SL[10].last=&SL[9];SL[10].pl=&PL[5][0];SL[10].task=&TL[5][0];SL[10].next=&SL[11];// 选择刻印
+    SL[11].last=&SL[10];SL[11].pl=&PL[9][0];SL[11].task=&TL[9][0];SL[11].next=&SL[12];// 战斗场景2
     SL[12].last=&SL[11];SL[12].pl=&PL[7][0];SL[12].task=&TL[7][0];SL[12].next=&SL[13];// 退出界面
     SL[13].last=&SL[12];SL[13].pl=&PL[8][0];SL[13].task=&TL[8][0];SL[13].next=&SL[14];// 确认退出
     SL[14].last=&SL[13];SL[14].pl=&PL[10][0];SL[14].task=&TL[8][1];SL[14].next=&SL[0];// 战斗失败

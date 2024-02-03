@@ -50,6 +50,7 @@ void KeyUp(char k)
 void KeyPress(char k)
 {
     KeyDown(k);
+    Sleep(10);
     KeyUp(k);
 }
 int CheckPoint(PointList *pl)

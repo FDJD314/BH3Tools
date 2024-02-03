@@ -7,7 +7,7 @@
 #include "Driver_FDJD.h"
 
 State SL[16];
-Task TL[10][2],TL_User_0,TL_User_1,TL_User_2;
+Task TL[10][3],TL_User_0,TL_User_1,TL_User_2;
 PointList PL[12][4];
 TaskFunction *User_ST,*User_MT,*User_ET;
 int *TimeFlag;
